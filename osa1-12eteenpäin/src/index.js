@@ -24,7 +24,7 @@ const App = (props) => {
         const copy = { ...points }
         copy[selected] += 1;
         let biggest = copy[mostVoted];
-        let mostV = 0;
+        let mostV = mostVoted;
         for (let i = 0; i < 6; i++) {
 
             if (copy[i] > biggest) {
@@ -41,7 +41,7 @@ const App = (props) => {
             <h1>Anecdote of the day</h1>
             {props.anecdotes[selected]}
             <p>has {points[selected]} votes</p>
-            
+
             <br />
             <Button handler={nextAnecdote} text="next anecdote" />
             <Button handler={addVote} text="vote" />
